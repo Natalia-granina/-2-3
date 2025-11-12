@@ -76,26 +76,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Page_1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Page_2.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Page_3.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Page_4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Page_5.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\Autho.xaml.cs">
@@ -103,21 +83,6 @@
     </Compile>
     <Compile Include="Pages\Client.xaml.cs">
       <DependentUpon>Client.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page_1.xaml.cs">
-      <DependentUpon>Page_1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page_2.xaml.cs">
-      <DependentUpon>Page_2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page_3.xaml.cs">
-      <DependentUpon>Page_3.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page_4.xaml.cs">
-      <DependentUpon>Page_4.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Page_5.xaml.cs">
-      <DependentUpon>Page_5.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

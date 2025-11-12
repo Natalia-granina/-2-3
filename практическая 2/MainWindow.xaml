@@ -24,26 +24,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnBack" HorizontalAlignment="Left" Margin="90,10,0,10" Content="Назад" Click="btnBack_Click"/>
+            <Button x:Name="btnBack" HorizontalAlignment="Left" Margin="675,10,0,10" Content="Назад" Click="btnBack_Click"/>
 
             <Image Width="45" Height="45" HorizontalAlignment="Left" Margin="5" Source="/icons8-рассвет-над-горами-96.png"/>
-
-            <Label Content="Вариант № 3" FontSize="16" HorizontalAlignment="Left" VerticalAlignment="Center" 
-                   Background="#FFBDF3FD" Margin="356,0,0,0" Padding="10,5"/>
-
-            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" 
-                        VerticalAlignment="Center" Margin="0,0,10,0">
-                <Button x:Name="btn1" Content="1" FontSize="20" Height="45" Width="45" Click="btn1_Click" 
-                        Background="#FFBDF3FD" Margin="5,0"/>
-                <Button x:Name="btn2" Content="2" FontSize="20" Height="45" Width="45" Click="btn2_Click" 
-                        Background="#FFBDF3FD" Margin="5,0"/>
-                <Button x:Name="btn3" Content="3" FontSize="20" Height="45" Width="45" Click="btn3_Click" 
-                        Background="#FFBDF3FD" Margin="5,0"/>
-                <Button x:Name="btn4" Content="4" FontSize="20" Height="45" Width="45" Click="btn4_Click" 
-                        Background="#FFBDF3FD" Margin="5,0"/>
-                <Button x:Name="btn5" Content="5" FontSize="20" Height="45" Width="45" Click="btn5_Click" 
-                        Background="#FFBDF3FD" Margin="5,0"/>
-            </StackPanel>
         </Grid>
 
         <Grid Grid.Row="1">
