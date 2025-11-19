@@ -9,7 +9,7 @@ namespace практическая_2.Services
 {
     internal class Hash
     {
-        public string HashPassw(string password)
+        public static string HashPassw(string password)
         {
             using (SHA256 hash256 = SHA256.Create())
             {

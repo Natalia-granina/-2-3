@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using практическая_2.Models;
 
 namespace практическая_2.Pages
 {
@@ -20,9 +21,10 @@ namespace практическая_2.Pages
     /// </summary>
     public partial class Client : Page
     {
-        public Client()
+        public Client(Authoriz user, string role)
         {
             InitializeComponent();
         }
+
     }
 }

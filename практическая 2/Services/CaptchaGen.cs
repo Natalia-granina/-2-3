@@ -12,10 +12,10 @@ namespace практическая_2.Services
         private const string Characters = 
             "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-        public static string GenCaptcha(int length)
+        public static string GenCaptchaText(int length)
         {
             if (length <= 0)
-                throw new ArgumentException("Доина капчи должна быть больше нуля");
+                throw new ArgumentException("Длина капчи должна быть больше нуля");
 
             StringBuilder capcha = new StringBuilder(length);
             for(int i=0; i<length; i++)

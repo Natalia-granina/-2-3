@@ -39,12 +39,10 @@ namespace практическая_2
         {
             if (FrmMain.CanGoBack)
             {
-                Welcome.Visibility = Visibility.Visible;
                 btnBack.Visibility = Visibility.Visible;
             }
             else
             {
-                Welcome.Visibility = Visibility.Hidden;
                 btnBack.Visibility = Visibility.Hidden;
             }
         }

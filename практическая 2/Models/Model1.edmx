@@ -1,0 +1,1807 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище EstateAgancyModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="aName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="100" />
+          <Property Name="AuthoID" Type="int" Nullable="false" />
+          <Property Name="PersonalDataID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="ParameterID" Type="int" Nullable="false" />
+          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="PriorityLevelID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="aType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Authoriz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="UserLogin" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="hashPassword" Type="varchar" MaxLength="64" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="cName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Patronymic" Type="varchar" MaxLength="100" />
+          <Property Name="AuthoID" Type="int" Nullable="false" />
+          <Property Name="PersonalDataID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="ContrDescription" Type="varchar" MaxLength="1000" />
+          <Property Name="StartDate" Type="date" Nullable="false" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="SignDate" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="cType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ContractType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealCode" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SignDate" Type="date" Nullable="false" />
+          <Property Name="EstateObjectID" Type="int" Nullable="false" />
+          <Property Name="BuyerID" Type="int" Nullable="false" />
+          <Property Name="SellerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeOfDegree" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Diploma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PersonID" Type="int" Nullable="false" />
+          <Property Name="PlaceOfStudyID" Type="int" Nullable="false" />
+          <Property Name="DegreeID" Type="int" Nullable="false" />
+          <Property Name="SpecialityID" Type="int" Nullable="false" />
+          <Property Name="StudyForm" Type="int" Nullable="false" />
+          <Property Name="PeriodID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="dType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DealType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EducPeriod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BeggOfEduc" Type="date" />
+          <Property Name="EndOfEduc" Type="date" />
+        </EntityType>
+        <EntityType Name="EstateObject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="eoAddress" Type="varchar" MaxLength="500" Nullable="false" />
+          <Property Name="TypeID" Type="int" Nullable="false" />
+          <Property Name="RoomCount" Type="int" Nullable="false" />
+          <Property Name="Area" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Floors" Type="int" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="HasBalcony" Type="bit" />
+          <Property Name="HasParking" Type="bit" />
+          <Property Name="HasFurniture" Type="bit" />
+          <Property Name="HasAppliances" Type="bit" />
+          <Property Name="OwnerID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="eStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="eType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ObjectType" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaxPrice" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="MinPrice" Type="decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="MaxArea" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="MinArea" Type="decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="MaxRooms" Type="int" Nullable="false" />
+          <Property Name="MinRooms" Type="int" Nullable="false" />
+          <Property Name="hasBalcony" Type="bit" />
+          <Property Name="hasFurniture" Type="bit" />
+          <Property Name="hasAppliances" Type="bit" />
+          <Property Name="RecFloor" Type="int" />
+        </EntityType>
+        <EntityType Name="PersonalData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="BirthDate" Type="date" />
+          <Property Name="pAddress" Type="varchar" MaxLength="500" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PlaceOfStudy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfEducOrg" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="100" />
+          <Property Name="City" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PriorityLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="prLevel" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Speciality">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="SpecName" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudyForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StudyForm" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TechnicalConclusion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TechnicalConditionID" Type="int" Nullable="false" />
+          <Property Name="HasDeffects" Type="bit" />
+          <Property Name="CreatedDate" Type="date" Nullable="false" />
+          <Property Name="IsToExploitation" Type="bit" />
+        </EntityType>
+        <EntityType Name="TechnicalCondition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeTC" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Applicati__Clien__0D7A0286">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Param__0C85DE4D">
+          <End Role="Parameter" Type="Self.Parameter" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parameter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Prior__0E6E26BF">
+          <End Role="PriorityLevel" Type="Self.PriorityLevel" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriorityLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="PriorityLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Statu__0B91BA14">
+          <End Role="aStatus" Type="Self.aStatus" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__TypeI__0A9D95DB">
+          <End Role="aType" Type="Self.aType" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contracts__Statu__7C4F7684">
+          <End Role="cStatus" Type="Self.cStatus" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contracts__TypeI__7B5B524B">
+          <End Role="cType" Type="Self.cType" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__BuyerID__76969D2E">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="BuyerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__EstateObj__75A278F5">
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstateObject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="EstateObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__StatusID__74AE54BC">
+          <End Role="dStatus" Type="Self.dStatus" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__TypeID__73BA3083">
+          <End Role="dType" Type="Self.dType" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__DegreeI__5441852A">
+          <End Role="Degree" Type="Self.Degree" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="DegreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PeriodI__571DF1D5">
+          <End Role="EducPeriod" Type="Self.EducPeriod" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducPeriod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PersonI__52593CB8">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PlaceOf__534D60F1">
+          <End Role="PlaceOfStudy" Type="Self.PlaceOfStudy" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceOfStudy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PlaceOfStudyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__Special__5535A963">
+          <End Role="Speciality" Type="Self.Speciality" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Speciality">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="SpecialityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__StudyFo__5629CD9C">
+          <End Role="StudyForm" Type="Self.StudyForm" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudyForm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="StudyForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__Owner__5FB337D6">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="OwnerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__Statu__5EBF139D">
+          <End Role="eStatus" Type="Self.eStatus" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__TypeI__5DCAEF64">
+          <End Role="eType" Type="Self.eType" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Technical__Techn__6477ECF3">
+          <End Role="TechnicalCondition" Type="Self.TechnicalCondition" Multiplicity="1" />
+          <End Role="TechnicalConclusion" Type="Self.TechnicalConclusion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TechnicalCondition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TechnicalConclusion">
+              <PropertyRef Name="TechnicalConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agents_Authoriz">
+          <End Role="Authoriz" Type="Self.Authoriz" Multiplicity="1" />
+          <End Role="Agents" Type="Self.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authoriz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="AuthoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agents_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Agents" Type="Self.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="PersonalDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Authoriz">
+          <End Role="Authoriz" Type="Self.Authoriz" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authoriz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="AuthoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="PersonalDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_Deals">
+          <End Role="Deals" Type="Self.Deals" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Deals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechnicalConclusion_EstateObject">
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="1" />
+          <End Role="TechnicalConclusion" Type="Self.TechnicalConclusion" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EstateObject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TechnicalConclusion">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище EstateAgancyModelContainer">
+          <EntitySet Name="Agents" EntityType="Self.Agents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aStatus" EntityType="Self.aStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="aType" EntityType="Self.aType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Authoriz" EntityType="Self.Authoriz" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cStatus" EntityType="Self.cStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="cType" EntityType="Self.cType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Deals" EntityType="Self.Deals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Degree" EntityType="Self.Degree" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Diploma" EntityType="Self.Diploma" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dStatus" EntityType="Self.dStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="dType" EntityType="Self.dType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EducPeriod" EntityType="Self.EducPeriod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EstateObject" EntityType="Self.EstateObject" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="eStatus" EntityType="Self.eStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="eType" EntityType="Self.eType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Parameter" EntityType="Self.Parameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PersonalData" EntityType="Self.PersonalData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PlaceOfStudy" EntityType="Self.PlaceOfStudy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PriorityLevel" EntityType="Self.PriorityLevel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Speciality" EntityType="Self.Speciality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudyForm" EntityType="Self.StudyForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnicalConclusion" EntityType="Self.TechnicalConclusion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechnicalCondition" EntityType="Self.TechnicalCondition" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Applicati__Clien__0D7A0286" Association="Self.FK__Applicati__Clien__0D7A0286">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Param__0C85DE4D" Association="Self.FK__Applicati__Param__0C85DE4D">
+            <End Role="Parameter" EntitySet="Parameter" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Prior__0E6E26BF" Association="Self.FK__Applicati__Prior__0E6E26BF">
+            <End Role="PriorityLevel" EntitySet="PriorityLevel" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Statu__0B91BA14" Association="Self.FK__Applicati__Statu__0B91BA14">
+            <End Role="aStatus" EntitySet="aStatus" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__TypeI__0A9D95DB" Association="Self.FK__Applicati__TypeI__0A9D95DB">
+            <End Role="aType" EntitySet="aType" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contracts__Statu__7C4F7684" Association="Self.FK__Contracts__Statu__7C4F7684">
+            <End Role="cStatus" EntitySet="cStatus" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contracts__TypeI__7B5B524B" Association="Self.FK__Contracts__TypeI__7B5B524B">
+            <End Role="cType" EntitySet="cType" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__BuyerID__76969D2E" Association="Self.FK__Deals__BuyerID__76969D2E">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__EstateObj__75A278F5" Association="Self.FK__Deals__EstateObj__75A278F5">
+            <End Role="EstateObject" EntitySet="EstateObject" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__StatusID__74AE54BC" Association="Self.FK__Deals__StatusID__74AE54BC">
+            <End Role="dStatus" EntitySet="dStatus" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__TypeID__73BA3083" Association="Self.FK__Deals__TypeID__73BA3083">
+            <End Role="dType" EntitySet="dType" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__DegreeI__5441852A" Association="Self.FK__Diploma__DegreeI__5441852A">
+            <End Role="Degree" EntitySet="Degree" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PeriodI__571DF1D5" Association="Self.FK__Diploma__PeriodI__571DF1D5">
+            <End Role="EducPeriod" EntitySet="EducPeriod" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PersonI__52593CB8" Association="Self.FK__Diploma__PersonI__52593CB8">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PlaceOf__534D60F1" Association="Self.FK__Diploma__PlaceOf__534D60F1">
+            <End Role="PlaceOfStudy" EntitySet="PlaceOfStudy" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__Special__5535A963" Association="Self.FK__Diploma__Special__5535A963">
+            <End Role="Speciality" EntitySet="Speciality" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__StudyFo__5629CD9C" Association="Self.FK__Diploma__StudyFo__5629CD9C">
+            <End Role="StudyForm" EntitySet="StudyForm" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__Owner__5FB337D6" Association="Self.FK__EstateObj__Owner__5FB337D6">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__Statu__5EBF139D" Association="Self.FK__EstateObj__Statu__5EBF139D">
+            <End Role="eStatus" EntitySet="eStatus" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__TypeI__5DCAEF64" Association="Self.FK__EstateObj__TypeI__5DCAEF64">
+            <End Role="eType" EntitySet="eType" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Technical__Techn__6477ECF3" Association="Self.FK__Technical__Techn__6477ECF3">
+            <End Role="TechnicalCondition" EntitySet="TechnicalCondition" />
+            <End Role="TechnicalConclusion" EntitySet="TechnicalConclusion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agents_Authoriz" Association="Self.FK_Agents_Authoriz">
+            <End Role="Authoriz" EntitySet="Authoriz" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agents_PersonalData" Association="Self.FK_Agents_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Authoriz" Association="Self.FK_Clients_Authoriz">
+            <End Role="Authoriz" EntitySet="Authoriz" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_PersonalData" Association="Self.FK_Clients_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_Deals" Association="Self.FK_Contracts_Deals">
+            <End Role="Deals" EntitySet="Deals" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechnicalConclusion_EstateObject" Association="Self.FK_TechnicalConclusion_EstateObject">
+            <End Role="EstateObject" EntitySet="EstateObject" />
+            <End Role="TechnicalConclusion" EntitySet="TechnicalConclusion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EstateAgancyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Agents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="aName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AuthoID" Type="Int32" Nullable="false" />
+          <Property Name="PersonalDataID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authoriz" Relationship="Self.FK_Agents_Authoriz" FromRole="Agents" ToRole="Authoriz" />
+          <NavigationProperty Name="PersonalData" Relationship="Self.FK_Agents_PersonalData" FromRole="Agents" ToRole="PersonalData" />
+        </EntityType>
+        <EntityType Name="Applications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="ParameterID" Type="Int32" Nullable="false" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="PriorityLevelID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK__Applicati__Clien__0D7A0286" FromRole="Applications" ToRole="Clients" />
+          <NavigationProperty Name="Parameter" Relationship="Self.FK__Applicati__Param__0C85DE4D" FromRole="Applications" ToRole="Parameter" />
+          <NavigationProperty Name="PriorityLevel" Relationship="Self.FK__Applicati__Prior__0E6E26BF" FromRole="Applications" ToRole="PriorityLevel" />
+          <NavigationProperty Name="aStatus" Relationship="Self.FK__Applicati__Statu__0B91BA14" FromRole="Applications" ToRole="aStatus" />
+          <NavigationProperty Name="aType" Relationship="Self.FK__Applicati__TypeI__0A9D95DB" FromRole="Applications" ToRole="aType" />
+        </EntityType>
+        <EntityType Name="aStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Statu__0B91BA14" FromRole="aStatus" ToRole="Applications" />
+        </EntityType>
+        <EntityType Name="aType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__TypeI__0A9D95DB" FromRole="aType" ToRole="Applications" />
+        </EntityType>
+        <EntityType Name="Authoriz">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="UserLogin" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hashPassword" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Agents" Relationship="Self.FK_Agents_Authoriz" FromRole="Authoriz" ToRole="Agents" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Authoriz" FromRole="Authoriz" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="cName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AuthoID" Type="Int32" Nullable="false" />
+          <Property Name="PersonalDataID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Clien__0D7A0286" FromRole="Clients" ToRole="Applications" />
+          <NavigationProperty Name="Authoriz" Relationship="Self.FK_Clients_Authoriz" FromRole="Clients" ToRole="Authoriz" />
+          <NavigationProperty Name="Deals" Relationship="Self.FK__Deals__BuyerID__76969D2E" FromRole="Clients" ToRole="Deals" />
+          <NavigationProperty Name="EstateObject" Relationship="Self.FK__EstateObj__Owner__5FB337D6" FromRole="Clients" ToRole="EstateObject" />
+          <NavigationProperty Name="PersonalData" Relationship="Self.FK_Clients_PersonalData" FromRole="Clients" ToRole="PersonalData" />
+        </EntityType>
+        <EntityType Name="Contracts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="ContrDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="SignDate" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="cStatus" Relationship="Self.FK__Contracts__Statu__7C4F7684" FromRole="Contracts" ToRole="cStatus" />
+          <NavigationProperty Name="cType" Relationship="Self.FK__Contracts__TypeI__7B5B524B" FromRole="Contracts" ToRole="cType" />
+          <NavigationProperty Name="Deals" Relationship="Self.FK_Contracts_Deals" FromRole="Contracts" ToRole="Deals" />
+        </EntityType>
+        <EntityType Name="cStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK__Contracts__Statu__7C4F7684" FromRole="cStatus" ToRole="Contracts" />
+        </EntityType>
+        <EntityType Name="cType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ContractType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK__Contracts__TypeI__7B5B524B" FromRole="cType" ToRole="Contracts" />
+        </EntityType>
+        <EntityType Name="Deals">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Amount" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="SignDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="EstateObjectID" Type="Int32" Nullable="false" />
+          <Property Name="BuyerID" Type="Int32" Nullable="false" />
+          <Property Name="SellerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK__Deals__BuyerID__76969D2E" FromRole="Deals" ToRole="Clients" />
+          <NavigationProperty Name="Contracts" Relationship="Self.FK_Contracts_Deals" FromRole="Deals" ToRole="Contracts" />
+          <NavigationProperty Name="EstateObject" Relationship="Self.FK__Deals__EstateObj__75A278F5" FromRole="Deals" ToRole="EstateObject" />
+          <NavigationProperty Name="dStatus" Relationship="Self.FK__Deals__StatusID__74AE54BC" FromRole="Deals" ToRole="dStatus" />
+          <NavigationProperty Name="dType" Relationship="Self.FK__Deals__TypeID__73BA3083" FromRole="Deals" ToRole="dType" />
+        </EntityType>
+        <EntityType Name="Degree">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeOfDegree" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__DegreeI__5441852A" FromRole="Degree" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="Diploma">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonID" Type="Int32" Nullable="false" />
+          <Property Name="PlaceOfStudyID" Type="Int32" Nullable="false" />
+          <Property Name="DegreeID" Type="Int32" Nullable="false" />
+          <Property Name="SpecialityID" Type="Int32" Nullable="false" />
+          <Property Name="StudyForm" Type="Int32" Nullable="false" />
+          <Property Name="PeriodID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Degree" Relationship="Self.FK__Diploma__DegreeI__5441852A" FromRole="Diploma" ToRole="Degree" />
+          <NavigationProperty Name="EducPeriod" Relationship="Self.FK__Diploma__PeriodI__571DF1D5" FromRole="Diploma" ToRole="EducPeriod" />
+          <NavigationProperty Name="PersonalData" Relationship="Self.FK__Diploma__PersonI__52593CB8" FromRole="Diploma" ToRole="PersonalData" />
+          <NavigationProperty Name="PlaceOfStudy" Relationship="Self.FK__Diploma__PlaceOf__534D60F1" FromRole="Diploma" ToRole="PlaceOfStudy" />
+          <NavigationProperty Name="Speciality" Relationship="Self.FK__Diploma__Special__5535A963" FromRole="Diploma" ToRole="Speciality" />
+          <NavigationProperty Name="StudyForm1" Relationship="Self.FK__Diploma__StudyFo__5629CD9C" FromRole="Diploma" ToRole="StudyForm" />
+        </EntityType>
+        <EntityType Name="dStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Deals" Relationship="Self.FK__Deals__StatusID__74AE54BC" FromRole="dStatus" ToRole="Deals" />
+        </EntityType>
+        <EntityType Name="dType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DealType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Deals" Relationship="Self.FK__Deals__TypeID__73BA3083" FromRole="dType" ToRole="Deals" />
+        </EntityType>
+        <EntityType Name="EducPeriod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BeggOfEduc" Type="DateTime" Precision="0" />
+          <Property Name="EndOfEduc" Type="DateTime" Precision="0" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__PeriodI__571DF1D5" FromRole="EducPeriod" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="EstateObject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="eoAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TypeID" Type="Int32" Nullable="false" />
+          <Property Name="RoomCount" Type="Int32" Nullable="false" />
+          <Property Name="Area" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="Floors" Type="Int32" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="HasBalcony" Type="Boolean" />
+          <Property Name="HasParking" Type="Boolean" />
+          <Property Name="HasFurniture" Type="Boolean" />
+          <Property Name="HasAppliances" Type="Boolean" />
+          <Property Name="OwnerID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK__EstateObj__Owner__5FB337D6" FromRole="EstateObject" ToRole="Clients" />
+          <NavigationProperty Name="Deals" Relationship="Self.FK__Deals__EstateObj__75A278F5" FromRole="EstateObject" ToRole="Deals" />
+          <NavigationProperty Name="eStatus" Relationship="Self.FK__EstateObj__Statu__5EBF139D" FromRole="EstateObject" ToRole="eStatus" />
+          <NavigationProperty Name="eType" Relationship="Self.FK__EstateObj__TypeI__5DCAEF64" FromRole="EstateObject" ToRole="eType" />
+          <NavigationProperty Name="TechnicalConclusion" Relationship="Self.FK_TechnicalConclusion_EstateObject" FromRole="EstateObject" ToRole="TechnicalConclusion" />
+        </EntityType>
+        <EntityType Name="eStatus">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EstateObject" Relationship="Self.FK__EstateObj__Statu__5EBF139D" FromRole="eStatus" ToRole="EstateObject" />
+        </EntityType>
+        <EntityType Name="eType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ObjectType" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="EstateObject" Relationship="Self.FK__EstateObj__TypeI__5DCAEF64" FromRole="eType" ToRole="EstateObject" />
+        </EntityType>
+        <EntityType Name="Parameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaxPrice" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="MinPrice" Type="Decimal" Precision="15" Scale="2" Nullable="false" />
+          <Property Name="MaxArea" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="MinArea" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="MaxRooms" Type="Int32" Nullable="false" />
+          <Property Name="MinRooms" Type="Int32" Nullable="false" />
+          <Property Name="hasBalcony" Type="Boolean" />
+          <Property Name="hasFurniture" Type="Boolean" />
+          <Property Name="hasAppliances" Type="Boolean" />
+          <Property Name="RecFloor" Type="Int32" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Param__0C85DE4D" FromRole="Parameter" ToRole="Applications" />
+        </EntityType>
+        <EntityType Name="PersonalData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Precision="0" />
+          <Property Name="pAddress" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Agents" Relationship="Self.FK_Agents_PersonalData" FromRole="PersonalData" ToRole="Agents" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_PersonalData" FromRole="PersonalData" ToRole="Clients" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__PersonI__52593CB8" FromRole="PersonalData" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="PlaceOfStudy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfEducOrg" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Country" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__PlaceOf__534D60F1" FromRole="PlaceOfStudy" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="PriorityLevel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="prLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Applications" Relationship="Self.FK__Applicati__Prior__0E6E26BF" FromRole="PriorityLevel" ToRole="Applications" />
+        </EntityType>
+        <EntityType Name="Speciality">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SpecName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__Special__5535A963" FromRole="Speciality" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="StudyForm">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StudyForm1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Diploma" Relationship="Self.FK__Diploma__StudyFo__5629CD9C" FromRole="StudyForm" ToRole="Diploma" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TechnicalConclusion">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TechnicalConditionID" Type="Int32" Nullable="false" />
+          <Property Name="HasDeffects" Type="Boolean" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IsToExploitation" Type="Boolean" />
+          <NavigationProperty Name="EstateObject" Relationship="Self.FK_TechnicalConclusion_EstateObject" FromRole="TechnicalConclusion" ToRole="EstateObject" />
+          <NavigationProperty Name="TechnicalCondition" Relationship="Self.FK__Technical__Techn__6477ECF3" FromRole="TechnicalConclusion" ToRole="TechnicalCondition" />
+        </EntityType>
+        <EntityType Name="TechnicalCondition">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TypeTC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="TechnicalConclusion" Relationship="Self.FK__Technical__Techn__6477ECF3" FromRole="TechnicalCondition" ToRole="TechnicalConclusion" />
+        </EntityType>
+        <Association Name="FK_Agents_Authoriz">
+          <End Role="Authoriz" Type="Self.Authoriz" Multiplicity="1" />
+          <End Role="Agents" Type="Self.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authoriz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="AuthoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Agents_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Agents" Type="Self.Agents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Agents">
+              <PropertyRef Name="PersonalDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Clien__0D7A0286">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="ClientID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Param__0C85DE4D">
+          <End Role="Parameter" Type="Self.Parameter" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Parameter">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="ParameterID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Prior__0E6E26BF">
+          <End Role="PriorityLevel" Type="Self.PriorityLevel" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PriorityLevel">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="PriorityLevelID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__Statu__0B91BA14">
+          <End Role="aStatus" Type="Self.aStatus" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Applicati__TypeI__0A9D95DB">
+          <End Role="aType" Type="Self.aType" Multiplicity="1" />
+          <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="aType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Applications">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Authoriz">
+          <End Role="Authoriz" Type="Self.Authoriz" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authoriz">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="AuthoID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__BuyerID__76969D2E">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="BuyerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__Owner__5FB337D6">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="OwnerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_PersonalData">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="PersonalDataID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contracts__Statu__7C4F7684">
+          <End Role="cStatus" Type="Self.cStatus" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Contracts__TypeI__7B5B524B">
+          <End Role="cType" Type="Self.cType" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="cType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contracts_Deals">
+          <End Role="Deals" Type="Self.Deals" Multiplicity="1" />
+          <End Role="Contracts" Type="Self.Contracts" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Deals">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Contracts">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__EstateObj__75A278F5">
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EstateObject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="EstateObjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__StatusID__74AE54BC">
+          <End Role="dStatus" Type="Self.dStatus" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Deals__TypeID__73BA3083">
+          <End Role="dType" Type="Self.dType" Multiplicity="1" />
+          <End Role="Deals" Type="Self.Deals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="dType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Deals">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__DegreeI__5441852A">
+          <End Role="Degree" Type="Self.Degree" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Degree">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="DegreeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PeriodI__571DF1D5">
+          <End Role="EducPeriod" Type="Self.EducPeriod" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EducPeriod">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PeriodID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PersonI__52593CB8">
+          <End Role="PersonalData" Type="Self.PersonalData" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PersonalData">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__PlaceOf__534D60F1">
+          <End Role="PlaceOfStudy" Type="Self.PlaceOfStudy" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PlaceOfStudy">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="PlaceOfStudyID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__Special__5535A963">
+          <End Role="Speciality" Type="Self.Speciality" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Speciality">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="SpecialityID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Diploma__StudyFo__5629CD9C">
+          <End Role="StudyForm" Type="Self.StudyForm" Multiplicity="1" />
+          <End Role="Diploma" Type="Self.Diploma" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StudyForm">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Diploma">
+              <PropertyRef Name="StudyForm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__Statu__5EBF139D">
+          <End Role="eStatus" Type="Self.eStatus" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eStatus">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="StatusID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__EstateObj__TypeI__5DCAEF64">
+          <End Role="eType" Type="Self.eType" Multiplicity="1" />
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="eType">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="EstateObject">
+              <PropertyRef Name="TypeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechnicalConclusion_EstateObject">
+          <End Role="EstateObject" Type="Self.EstateObject" Multiplicity="1" />
+          <End Role="TechnicalConclusion" Type="Self.TechnicalConclusion" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="EstateObject">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TechnicalConclusion">
+              <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Technical__Techn__6477ECF3">
+          <End Role="TechnicalCondition" Type="Self.TechnicalCondition" Multiplicity="1" />
+          <End Role="TechnicalConclusion" Type="Self.TechnicalConclusion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TechnicalCondition">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TechnicalConclusion">
+              <PropertyRef Name="TechnicalConditionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EstateAgancyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Agents" EntityType="Self.Agents" />
+          <EntitySet Name="Applications" EntityType="Self.Applications" />
+          <EntitySet Name="aStatus" EntityType="Self.aStatus" />
+          <EntitySet Name="aType" EntityType="Self.aType" />
+          <EntitySet Name="Authoriz" EntityType="Self.Authoriz" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Contracts" EntityType="Self.Contracts" />
+          <EntitySet Name="cStatus" EntityType="Self.cStatus" />
+          <EntitySet Name="cType" EntityType="Self.cType" />
+          <EntitySet Name="Deals" EntityType="Self.Deals" />
+          <EntitySet Name="Degree" EntityType="Self.Degree" />
+          <EntitySet Name="Diploma" EntityType="Self.Diploma" />
+          <EntitySet Name="dStatus" EntityType="Self.dStatus" />
+          <EntitySet Name="dType" EntityType="Self.dType" />
+          <EntitySet Name="EducPeriod" EntityType="Self.EducPeriod" />
+          <EntitySet Name="EstateObject" EntityType="Self.EstateObject" />
+          <EntitySet Name="eStatus" EntityType="Self.eStatus" />
+          <EntitySet Name="eType" EntityType="Self.eType" />
+          <EntitySet Name="Parameter" EntityType="Self.Parameter" />
+          <EntitySet Name="PersonalData" EntityType="Self.PersonalData" />
+          <EntitySet Name="PlaceOfStudy" EntityType="Self.PlaceOfStudy" />
+          <EntitySet Name="PriorityLevel" EntityType="Self.PriorityLevel" />
+          <EntitySet Name="Speciality" EntityType="Self.Speciality" />
+          <EntitySet Name="StudyForm" EntityType="Self.StudyForm" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TechnicalConclusion" EntityType="Self.TechnicalConclusion" />
+          <EntitySet Name="TechnicalCondition" EntityType="Self.TechnicalCondition" />
+          <AssociationSet Name="FK_Agents_Authoriz" Association="Self.FK_Agents_Authoriz">
+            <End Role="Authoriz" EntitySet="Authoriz" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Agents_PersonalData" Association="Self.FK_Agents_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Agents" EntitySet="Agents" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Clien__0D7A0286" Association="Self.FK__Applicati__Clien__0D7A0286">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Param__0C85DE4D" Association="Self.FK__Applicati__Param__0C85DE4D">
+            <End Role="Parameter" EntitySet="Parameter" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Prior__0E6E26BF" Association="Self.FK__Applicati__Prior__0E6E26BF">
+            <End Role="PriorityLevel" EntitySet="PriorityLevel" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__Statu__0B91BA14" Association="Self.FK__Applicati__Statu__0B91BA14">
+            <End Role="aStatus" EntitySet="aStatus" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Applicati__TypeI__0A9D95DB" Association="Self.FK__Applicati__TypeI__0A9D95DB">
+            <End Role="aType" EntitySet="aType" />
+            <End Role="Applications" EntitySet="Applications" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Authoriz" Association="Self.FK_Clients_Authoriz">
+            <End Role="Authoriz" EntitySet="Authoriz" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__BuyerID__76969D2E" Association="Self.FK__Deals__BuyerID__76969D2E">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__Owner__5FB337D6" Association="Self.FK__EstateObj__Owner__5FB337D6">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_PersonalData" Association="Self.FK_Clients_PersonalData">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contracts__Statu__7C4F7684" Association="Self.FK__Contracts__Statu__7C4F7684">
+            <End Role="cStatus" EntitySet="cStatus" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Contracts__TypeI__7B5B524B" Association="Self.FK__Contracts__TypeI__7B5B524B">
+            <End Role="cType" EntitySet="cType" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contracts_Deals" Association="Self.FK_Contracts_Deals">
+            <End Role="Deals" EntitySet="Deals" />
+            <End Role="Contracts" EntitySet="Contracts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__EstateObj__75A278F5" Association="Self.FK__Deals__EstateObj__75A278F5">
+            <End Role="EstateObject" EntitySet="EstateObject" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__StatusID__74AE54BC" Association="Self.FK__Deals__StatusID__74AE54BC">
+            <End Role="dStatus" EntitySet="dStatus" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Deals__TypeID__73BA3083" Association="Self.FK__Deals__TypeID__73BA3083">
+            <End Role="dType" EntitySet="dType" />
+            <End Role="Deals" EntitySet="Deals" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__DegreeI__5441852A" Association="Self.FK__Diploma__DegreeI__5441852A">
+            <End Role="Degree" EntitySet="Degree" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PeriodI__571DF1D5" Association="Self.FK__Diploma__PeriodI__571DF1D5">
+            <End Role="EducPeriod" EntitySet="EducPeriod" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PersonI__52593CB8" Association="Self.FK__Diploma__PersonI__52593CB8">
+            <End Role="PersonalData" EntitySet="PersonalData" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__PlaceOf__534D60F1" Association="Self.FK__Diploma__PlaceOf__534D60F1">
+            <End Role="PlaceOfStudy" EntitySet="PlaceOfStudy" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__Special__5535A963" Association="Self.FK__Diploma__Special__5535A963">
+            <End Role="Speciality" EntitySet="Speciality" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Diploma__StudyFo__5629CD9C" Association="Self.FK__Diploma__StudyFo__5629CD9C">
+            <End Role="StudyForm" EntitySet="StudyForm" />
+            <End Role="Diploma" EntitySet="Diploma" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__Statu__5EBF139D" Association="Self.FK__EstateObj__Statu__5EBF139D">
+            <End Role="eStatus" EntitySet="eStatus" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK__EstateObj__TypeI__5DCAEF64" Association="Self.FK__EstateObj__TypeI__5DCAEF64">
+            <End Role="eType" EntitySet="eType" />
+            <End Role="EstateObject" EntitySet="EstateObject" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechnicalConclusion_EstateObject" Association="Self.FK_TechnicalConclusion_EstateObject">
+            <End Role="EstateObject" EntitySet="EstateObject" />
+            <End Role="TechnicalConclusion" EntitySet="TechnicalConclusion" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Technical__Techn__6477ECF3" Association="Self.FK__Technical__Techn__6477ECF3">
+            <End Role="TechnicalCondition" EntitySet="TechnicalCondition" />
+            <End Role="TechnicalConclusion" EntitySet="TechnicalConclusion" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище EstateAgancyModelContainer" CdmEntityContainer="EstateAgancyEntities">
+          <EntitySetMapping Name="Agents">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Agents">
+              <MappingFragment StoreEntitySet="Agents">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="aName" ColumnName="aName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="AuthoID" ColumnName="AuthoID" />
+                <ScalarProperty Name="PersonalDataID" ColumnName="PersonalDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Applications">
+              <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AppCode" ColumnName="AppCode" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="ParameterID" ColumnName="ParameterID" />
+                <ScalarProperty Name="ClientID" ColumnName="ClientID" />
+                <ScalarProperty Name="PriorityLevelID" ColumnName="PriorityLevelID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aStatus">
+            <EntityTypeMapping TypeName="EstateAgancyModel.aStatus">
+              <MappingFragment StoreEntitySet="aStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="aType">
+            <EntityTypeMapping TypeName="EstateAgancyModel.aType">
+              <MappingFragment StoreEntitySet="aType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AppType" ColumnName="AppType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Authoriz">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Authoriz">
+              <MappingFragment StoreEntitySet="Authoriz">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserLogin" ColumnName="UserLogin" />
+                <ScalarProperty Name="hashPassword" ColumnName="hashPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="cName" ColumnName="cName" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="AuthoID" ColumnName="AuthoID" />
+                <ScalarProperty Name="PersonalDataID" ColumnName="PersonalDataID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contracts">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Contracts">
+              <MappingFragment StoreEntitySet="Contracts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ContractCode" ColumnName="ContractCode" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="ContrDescription" ColumnName="ContrDescription" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="SignDate" ColumnName="SignDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cStatus">
+            <EntityTypeMapping TypeName="EstateAgancyModel.cStatus">
+              <MappingFragment StoreEntitySet="cStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="cType">
+            <EntityTypeMapping TypeName="EstateAgancyModel.cType">
+              <MappingFragment StoreEntitySet="cType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ContractType" ColumnName="ContractType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Deals">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Deals">
+              <MappingFragment StoreEntitySet="Deals">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealCode" ColumnName="DealCode" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="SignDate" ColumnName="SignDate" />
+                <ScalarProperty Name="EstateObjectID" ColumnName="EstateObjectID" />
+                <ScalarProperty Name="BuyerID" ColumnName="BuyerID" />
+                <ScalarProperty Name="SellerID" ColumnName="SellerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Degree">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Degree">
+              <MappingFragment StoreEntitySet="Degree">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeOfDegree" ColumnName="TypeOfDegree" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Diploma">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Diploma">
+              <MappingFragment StoreEntitySet="Diploma">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PersonID" ColumnName="PersonID" />
+                <ScalarProperty Name="PlaceOfStudyID" ColumnName="PlaceOfStudyID" />
+                <ScalarProperty Name="DegreeID" ColumnName="DegreeID" />
+                <ScalarProperty Name="SpecialityID" ColumnName="SpecialityID" />
+                <ScalarProperty Name="StudyForm" ColumnName="StudyForm" />
+                <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dStatus">
+            <EntityTypeMapping TypeName="EstateAgancyModel.dStatus">
+              <MappingFragment StoreEntitySet="dStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="dType">
+            <EntityTypeMapping TypeName="EstateAgancyModel.dType">
+              <MappingFragment StoreEntitySet="dType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DealType" ColumnName="DealType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EducPeriod">
+            <EntityTypeMapping TypeName="EstateAgancyModel.EducPeriod">
+              <MappingFragment StoreEntitySet="EducPeriod">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BeggOfEduc" ColumnName="BeggOfEduc" />
+                <ScalarProperty Name="EndOfEduc" ColumnName="EndOfEduc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EstateObject">
+            <EntityTypeMapping TypeName="EstateAgancyModel.EstateObject">
+              <MappingFragment StoreEntitySet="EstateObject">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="eoAddress" ColumnName="eoAddress" />
+                <ScalarProperty Name="TypeID" ColumnName="TypeID" />
+                <ScalarProperty Name="RoomCount" ColumnName="RoomCount" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Floors" ColumnName="Floors" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="HasBalcony" ColumnName="HasBalcony" />
+                <ScalarProperty Name="HasParking" ColumnName="HasParking" />
+                <ScalarProperty Name="HasFurniture" ColumnName="HasFurniture" />
+                <ScalarProperty Name="HasAppliances" ColumnName="HasAppliances" />
+                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eStatus">
+            <EntityTypeMapping TypeName="EstateAgancyModel.eStatus">
+              <MappingFragment StoreEntitySet="eStatus">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StatusType" ColumnName="StatusType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="eType">
+            <EntityTypeMapping TypeName="EstateAgancyModel.eType">
+              <MappingFragment StoreEntitySet="eType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Parameter">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Parameter">
+              <MappingFragment StoreEntitySet="Parameter">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="MaxPrice" ColumnName="MaxPrice" />
+                <ScalarProperty Name="MinPrice" ColumnName="MinPrice" />
+                <ScalarProperty Name="MaxArea" ColumnName="MaxArea" />
+                <ScalarProperty Name="MinArea" ColumnName="MinArea" />
+                <ScalarProperty Name="MaxRooms" ColumnName="MaxRooms" />
+                <ScalarProperty Name="MinRooms" ColumnName="MinRooms" />
+                <ScalarProperty Name="hasBalcony" ColumnName="hasBalcony" />
+                <ScalarProperty Name="hasFurniture" ColumnName="hasFurniture" />
+                <ScalarProperty Name="hasAppliances" ColumnName="hasAppliances" />
+                <ScalarProperty Name="RecFloor" ColumnName="RecFloor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PersonalData">
+            <EntityTypeMapping TypeName="EstateAgancyModel.PersonalData">
+              <MappingFragment StoreEntitySet="PersonalData">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="pAddress" ColumnName="pAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PlaceOfStudy">
+            <EntityTypeMapping TypeName="EstateAgancyModel.PlaceOfStudy">
+              <MappingFragment StoreEntitySet="PlaceOfStudy">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NameOfEducOrg" ColumnName="NameOfEducOrg" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PriorityLevel">
+            <EntityTypeMapping TypeName="EstateAgancyModel.PriorityLevel">
+              <MappingFragment StoreEntitySet="PriorityLevel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="prLevel" ColumnName="prLevel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Speciality">
+            <EntityTypeMapping TypeName="EstateAgancyModel.Speciality">
+              <MappingFragment StoreEntitySet="Speciality">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="SpecName" ColumnName="SpecName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudyForm">
+            <EntityTypeMapping TypeName="EstateAgancyModel.StudyForm">
+              <MappingFragment StoreEntitySet="StudyForm">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="StudyForm1" ColumnName="StudyForm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EstateAgancyModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechnicalConclusion">
+            <EntityTypeMapping TypeName="EstateAgancyModel.TechnicalConclusion">
+              <MappingFragment StoreEntitySet="TechnicalConclusion">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TechnicalConditionID" ColumnName="TechnicalConditionID" />
+                <ScalarProperty Name="HasDeffects" ColumnName="HasDeffects" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="IsToExploitation" ColumnName="IsToExploitation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechnicalCondition">
+            <EntityTypeMapping TypeName="EstateAgancyModel.TechnicalCondition">
+              <MappingFragment StoreEntitySet="TechnicalCondition">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TypeTC" ColumnName="TypeTC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

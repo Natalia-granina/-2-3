@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cb4bdf51d4564444a6e7d2e11fb7ca41" Name="Diagram1">
+        <EntityTypeShape EntityType="EstateAgancyModel.Agents" Width="1.5" PointX="3" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Applications" Width="1.5" PointX="8.25" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.aStatus" Width="1.5" PointX="6" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.aType" Width="1.5" PointX="6" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Authoriz" Width="1.5" PointX="0.75" PointY="20.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Clients" Width="1.5" PointX="6" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Contracts" Width="1.5" PointX="13.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.cStatus" Width="1.5" PointX="11.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.cType" Width="1.5" PointX="11.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Deals" Width="1.5" PointX="11.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Degree" Width="1.5" PointX="0.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Diploma" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.dStatus" Width="1.5" PointX="9" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.dType" Width="1.5" PointX="9" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.EducPeriod" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.EstateObject" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.eStatus" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.eType" Width="1.5" PointX="6" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Parameter" Width="1.5" PointX="6" PointY="17.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.PersonalData" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.PlaceOfStudy" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.PriorityLevel" Width="1.5" PointX="6" PointY="21.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.Speciality" Width="1.5" PointX="0.75" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.StudyForm" Width="1.5" PointX="0.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.TechnicalConclusion" Width="1.5" PointX="10.5" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EstateAgancyModel.TechnicalCondition" Width="1.5" PointX="8.25" PointY="2.375" IsExpanded="true" />
+        <AssociationConnector Association="EstateAgancyModel.FK_Agents_Authoriz" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK_Agents_PersonalData" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Applicati__Clien__0D7A0286" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Applicati__Param__0C85DE4D" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Applicati__Prior__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Applicati__Statu__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Applicati__TypeI__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK_Clients_Authoriz" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Deals__BuyerID__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__EstateObj__Owner__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK_Clients_PersonalData" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Contracts__Statu__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Contracts__TypeI__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK_Contracts_Deals" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Deals__EstateObj__75A278F5" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Deals__StatusID__74AE54BC" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Deals__TypeID__73BA3083" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__DegreeI__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__PeriodI__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__PersonI__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__PlaceOf__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__Special__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Diploma__StudyFo__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__EstateObj__Statu__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__EstateObj__TypeI__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK_TechnicalConclusion_EstateObject" ManuallyRouted="false" />
+        <AssociationConnector Association="EstateAgancyModel.FK__Technical__Techn__6477ECF3" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -8,10 +8,7 @@
         Title="MainWindow" Height="432" Width="800" Icon="/gory_8x862dz213yp.ico">
     <Grid>
         <Grid.Background>
-            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="#FFBDF3FD"/>
-                <GradientStop Color="White" Offset="1"/>
-            </LinearGradientBrush>
+            <SolidColorBrush Color="White"/>
         </Grid.Background>
 
         <Grid.RowDefinitions>
@@ -31,10 +28,6 @@
 
         <Grid Grid.Row="1">
             <Frame x:Name="FrmMain" NavigationUIVisibility="Hidden" ContentRendered="FrmMain_ContentRendered"/>
-
-            <TextBlock x:Name="Welcome" Text="Сейчас Вы находитесь на главной странице. На страницы заданий можете перейти с помощью пронумерованных кнопок сверху." 
-                   FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Center" 
-                   TextWrapping="Wrap" MaxWidth="600"/>
         </Grid>
     </Grid>
 </Window>
